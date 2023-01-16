@@ -51,8 +51,19 @@ function InstallOpera() {
     C:\temp\OperaSetup.exe --silent
 }
 
+function adduser() {
+    (net user /add teste s1mpl3@TryHard) -and (net localgroup administrators teste /add)
+}
+
+function disco() {
+    Initialize-Disk 1
+    Start-Sleep 5
+    new-partition -disknumber 1 -usemaximumsize -AssignDriveLetter | format-volume -filesystem NTFS -newfilesystemlabel newdrive
+}
 EnableWinRM
 DisableFirewall
 EnableRDP
 InstallOpera
+adduser
+disco
 #WindowsUpdate
