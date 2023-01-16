@@ -58,7 +58,7 @@ function adduser() {
 function disco() {
     Initialize-Disk 1
     Start-Sleep 5
-    new-partition -disknumber 1 -usemaximumsize -AssignDriveLetter | format-volume -filesystem NTFS -newfilesystemlabel newdrive
+    new-partition -disknumber 1 -usemaximumsize -AssignDriveLetter | format-volume -filesystem NTFS -newfilesystemlabel dados
 }
 EnableWinRM
 DisableFirewall
